@@ -10,30 +10,48 @@
             font-family: 'Malgun Gothic', sans-serif;
             background-color: #f0f4f8;
             margin: 0;
-            padding: 0;
+            padding: 60px 0 40px 0;
             position: relative;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
+            box-sizing: border-box;
         }
 
-        /* 오른쪽 위에 들어갈 일기 페이지 이동 링크(버튼 모양) */
-        .diary-link-btn {
+        /* 우측 상단 네비게이션 바 (홈, 일기장 버튼) */
+        .top-nav-bar {
             position: absolute;
             top: 20px;
             right: 20px;
-            background-color: #3f51b5;
-            color: white;
-            text-decoration: none; /* 링크 밑줄 제거 */
-            padding: 10px 20px;
-            font-size: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 10px; /* 버튼 사이 간격 */
+            z-index: 10;
         }
 
-        .diary-link-btn:hover {
-            background-color: #303f9f;
+        .nav-btn {
+            background-color: #ffffff;
+            color: #333;
+            text-decoration: none;
+            padding: 9px 16px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border: 1px solid #e2e8f0;
+            transition: all 0.2s ease;
+        }
+
+        .nav-btn:hover {
+            background-color: #f8fafc;
+            transform: translateY(-2px);
+        }
+
+        /* 현재 활성화된 페이지 버튼 강조 스타일 */
+        .nav-btn.active {
+            background-color: #3f51b5;
+            color: white;
+            border-color: #3f51b5;
         }
 
         .profile-card {
@@ -42,8 +60,9 @@
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             text-align: center;
-            max-width: 400px;
+            max-width: 420px;
             width: 90%;
+            margin-top: 20px;
         }
 
         .profile-img {
@@ -74,19 +93,97 @@
             font-weight: bold;
             margin-top: 20px;
         }
+
+        .info-section {
+            text-align: left;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .info-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            background-color: #e8f0fe;
+            color: #1a73e8;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        .game-tag {
+            background-color: #fce8e6;
+            color: #d93025;
+        }
+
+        .github-btn {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            background-color: #24292e;
+            color: white;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: background-color 0.2s;
+            text-align: center;
+        }
+
+        .github-btn:hover {
+            background-color: #000;
+        }
     </style>
 </head>
 <body>
 
-    <!-- 오른쪽 위 일기 페이지로 가는 버튼 (a 태그 사용) -->
-    <a href="diary.html" class="diary-link-btn">📖 일기장 가기</a>
+    <!-- 우측 상단 네비게이션 버튼 (홈 / 일기장) -->
+    <div class="top-nav-bar">
+        <a href="index.html" class="nav-btn active">🏠 홈</a>
+        <a href="diary.html" class="nav-btn">📖 일기장</a>
+    </div>
 
     <div class="profile-card">
         <img src="https://placehold.co/150x150/e2e8f0/475569?text=Photo" alt="내 프로필 사진" class="profile-img">
-        <h1>홍길동</h1>
+        <h1>james</h1>
         <p>안녕하세요! 웹 개발을 처음 배우기 시작한 초보 개발자입니다. 코딩이 정말 재미있네요!</p>
+        
         <button id="myBtn" class="hello-btn">인사하기!</button>
         <p id="welcome-message"></p>
+
+        <div class="info-section">
+            <div class="info-title">🚴 나의 취미</div>
+            <div class="tag-list">
+                <span class="tag">🚴 자전거 타기</span>
+                <span class="tag">🎮 게임하기</span>
+                <span class="tag">🎸 기타 연주</span>
+                <span class="tag">🎻 바이올린 연주</span>
+            </div>
+
+            <div class="info-title">🎮 즐겨하는 게임</div>
+            <div class="tag-list">
+                <span class="tag game-tag">🎯 발로란트</span>
+                <span class="tag game-tag">🧱 로블록스</span>
+                <span class="tag game-tag">💥 브롤스타즈</span>
+            </div>
+
+            <a href="https://github.com/james130829" target="_blank" class="github-btn">
+                🐙 내 GitHub 방문하기
+            </a>
+        </div>
     </div>
 
     <script>

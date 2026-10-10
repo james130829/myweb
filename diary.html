@@ -10,34 +10,50 @@
             font-family: 'Malgun Gothic', sans-serif;
             background-color: #f0f4f8;
             margin: 0;
-            padding: 40px 20px;
+            padding: 80px 20px 40px 20px;
+            position: relative;
             display: flex;
             flex-direction: column;
             align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
         }
 
-        /* 상단 네비게이션 영역 (메인으로 돌아가기 버튼) */
-        .top-nav {
-            width: 100%;
-            max-width: 600px;
-            margin-bottom: 20px;
+        /* 우측 상단 네비게이션 바 (홈, 일기장 버튼) */
+        .top-nav-bar {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 10;
         }
 
-        .back-btn {
-            background-color: #607d8b;
-            color: white;
+        .nav-btn {
+            background-color: #ffffff;
+            color: #333;
             text-decoration: none;
-            padding: 8px 16px;
+            padding: 9px 16px;
             font-size: 14px;
-            border-radius: 6px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            font-weight: bold;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border: 1px solid #e2e8f0;
+            transition: all 0.2s ease;
         }
 
-        .back-btn:hover {
-            background-color: #455a64;
+        .nav-btn:hover {
+            background-color: #f8fafc;
+            transform: translateY(-2px);
         }
 
-        /* 일기장 전체 박스 */
+        /* 현재 활성화된 페이지 버튼 강조 스타일 */
+        .nav-btn.active {
+            background-color: #3f51b5;
+            color: white;
+            border-color: #3f51b5;
+        }
+
         .diary-container {
             background-color: white;
             width: 100%;
@@ -54,7 +70,6 @@
             margin-bottom: 25px;
         }
 
-        /* 일기 카드 스타일 */
         .diary-card {
             background-color: #f9f9f9;
             border-left: 5px solid #3f51b5;
@@ -86,34 +101,37 @@
 </head>
 <body>
 
-    <!-- 메인 페이지로 돌아가는 버튼 -->
-    <div class="top-nav">
-        <a href="index.html" class="back-btn">🏠 메인으로</a>
+    <!-- 우측 상단 네비게이션 버튼 (홈 / 일기장) -->
+    <div class="top-nav-bar">
+        <a href="index.html" class="nav-btn">🏠 홈</a>
+        <a href="diary.html" class="nav-btn active">📖 일기장</a>
     </div>
 
-    <!-- 일기장 본문 영역 -->
     <div class="diary-container">
         <h2>📖 나의 코딩 학습 일기</h2>
         
-        <!-- 일기 카드 1 -->
         <div class="diary-card">
             <div class="diary-date">2026년 6월 7일</div>
             <div class="diary-title">드디어 HTML과 CSS를 배웠다!</div>
             <div class="diary-content">웹페이지의 뼈대를 만드는 HTML과 예쁘게 꾸며주는 CSS를 공부했다. 생각보다 화면이 척척 만들어져서 신기하고 재미있었다.</div>
         </div>
 
-        <!-- 일기 카드 2 -->
         <div class="diary-card">
             <div class="diary-date">2026년 6월 8일</div>
             <div class="diary-title">자바스크립트 버튼 클릭 이벤트</div>
             <div class="diary-content">버튼을 눌렀을 때 글자가 바뀌고 색상이 변하는 기능을 구현했다. 프로그래밍과 대화하는 느낌이라 바이브 코딩이 뭔지 조금 알 것 같다!</div>
         </div>
 
-        <!-- 일기 카드 3 -->
         <div class="diary-card">
             <div class="diary-date">2026년 6월 9일</div>
-            <div class="diary-title">별도의 웹페이지로 일기장 분리하기</div>
-            <div class="diary-content">모달 창 대신 링크를 통해 완전히 새로운 웹페이지로 일기장을 분리했다. 이제 진짜 다중 페이지 웹사이트가 된 기분이다!</div>
+            <div class="diary-title">상단 네비게이션 메뉴 구성</div>
+            <div class="diary-content">홈과 일기장 버튼을 우측 상단에 공통으로 만들었다. 이제 어떤 페이지에서든 자유롭게 이동할 수 있다!</div>
+        </div>
+
+        <div class="diary-card">
+            <div class="diary-date">2026년 10월 10일</div>
+            <div class="diary-title">선생님과 함깨하는 신나는 코딩수업</div>
+            <div class="diary-content">오늘은 선생님과 함깨 일기장, 홈버튼을 만들었다 홈과 일기장 버튼의 위치는 메인화면, 일기장화면 우측상단에 있다.</div>
         </div>
     </div>
 
