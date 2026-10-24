@@ -73,27 +73,6 @@
             margin-bottom: 20px;
         }
 
-        .hello-btn {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 15px;
-        }
-
-        .hello-btn:hover {
-            background-color: #45a049;
-        }
-
-        #welcome-message {
-            color: #d32f2f;
-            font-weight: bold;
-            margin-top: 20px;
-        }
-
         .info-section {
             text-align: left;
             margin-top: 25px;
@@ -160,9 +139,6 @@
         <img src="https://scontent-ssn1-1.xx.fbcdn.net/v/t39.30808-6/473593556_1951465862361143_2846692533957715476_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1082&ctp=s1080x1082&_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_ohc=w8m8_1JnohMQ7kNvwELWX2f&_nc_oc=AdrV1pT22VEnm2QMnF2LbuqiyGAy6BanJfaaHk1v3LLdvSPbrxtGb9N2iLJWekaiFgs&_nc_zt=23&_nc_ht=scontent-ssn1-1.xx&_nc_gid=vmwZziyrmGKwgCpnh8fwPQ&_nc_ss=7b289&oh=00_AQP4KTqZeKDKgXvpeN7qkTlAWPSEkK2MagxCJrw1T--fJQ&oe=6AE2336F" alt="내 프로필 사진" class="profile-img">
         <h1>james</h1>
         <p>안녕하세요! 웹 개발을 처음 배우기 시작한 초보 개발자입니다. 코딩이 정말 재미있네요!</p>
-        
-        <button id="myBtn" class="hello-btn">인사하기!</button>
-        <p id="welcome-message"></p>
 
         <div class="info-section">
             <div class="info-title">🚴 나의 취미</div>
@@ -187,14 +163,7 @@
     </div>
 
     <script>
-        const btn = document.getElementById('myBtn');
-        const messageArea = document.getElementById('welcome-message');
-
-        btn.addEventListener('click', function() {
-            messageArea.innerText = "제 홈페이지에 오신 것을 환영합니다! 🎉 만나서 반가워요!";
-            btn.innerText = "인사 완료!";
-            btn.style.backgroundColor = "#2196F3"; 
-        });
+        
     </script>
 </body>
 </html>
